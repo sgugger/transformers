@@ -305,7 +305,7 @@ def main(args, model=None):
         or str(args.output_dir).startswith("/tmp")
         or str(args.output_dir).startswith("/var")
     ):
-        logger = True
+        logger = WandbLogger(name=model.output_dir.name, project="unittest")
     elif args.logger == "wandb":
         logger = WandbLogger(name=model.output_dir.name, project=WANDB_PROJ_NAME)
     elif args.logger == "wandb_shared":
