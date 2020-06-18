@@ -1440,6 +1440,7 @@ class SummarizationPipeline(Pipeline):
 
         with self.device_placement():
             inputs = self._parse_and_tokenize(*documents, pad_to_max_length=pad_to_max_length)
+            import ipdb; ipdb.set_trace()
 
             if self.framework == "pt":
                 inputs = self.ensure_tensor_on_device(**inputs)
